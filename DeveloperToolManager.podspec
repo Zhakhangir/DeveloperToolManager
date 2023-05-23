@@ -1,0 +1,17 @@
+Pod::Spec.new do |s|
+  s.name             = 'DeveloperToolManager'
+  s.version          = '0.1.0'
+  s.summary          = 'UI tools'
+  s.description      = 'Developer Tool for Berekebank BBusiness'
+  s.homepage         = 'https://github.com/Zhakhangir'
+  s.license          = { :type => 'MIT' }
+  s.author           = { 'Таиров Жахангир Захирович' => 'Zhakhangir.Tairov@berekebank.kz' }
+  s.source           = { :git => 'https://github.com/Zhakhangir/DeveloperToolManager.git', :tag => s.version.to_s }
+  s.ios.deployment_target = '12.0'
+  s.swift_versions   = '5.0'
+  
+  s.dependency 'SbiLogger'
+  s.dependency 'SbiDevelopMenu'
+
+  s.source_files  = 'DeveloperToolManager/**/*.{swift,h,m}'
+end
