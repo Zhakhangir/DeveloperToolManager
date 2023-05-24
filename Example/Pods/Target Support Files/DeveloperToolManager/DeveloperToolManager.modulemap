@@ -1,0 +1,6 @@
+module DeveloperToolManager {
+  umbrella header "DeveloperToolManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

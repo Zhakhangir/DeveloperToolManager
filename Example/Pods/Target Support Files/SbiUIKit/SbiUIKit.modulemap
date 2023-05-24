@@ -1,0 +1,6 @@
+module SbiUIKit {
+  umbrella header "SbiUIKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

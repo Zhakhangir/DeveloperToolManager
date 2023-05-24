@@ -1,0 +1,34 @@
+{
+  "name": "DeveloperToolManager",
+  "version": "0.1.0",
+  "summary": "UI tools",
+  "description": "This pod demonstrates including dependencies to other Pods in a developed-pod.",
+  "homepage": "https://github.com/Zhakhangir",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": {
+    "Таиров Жахангир Захирович": "Zhakhangir.Tairov@berekebank.kz"
+  },
+  "source": {
+    "git": "https://github.com/Zhakhangir/DeveloperToolManager.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "12.0"
+  },
+  "swift_versions": "5.0",
+  "dependencies": {
+    "SbiLogger": [
+
+    ],
+    "SbiDevelopMenu": [
+
+    ],
+    "SnapKit": [
+      "~> 5.0.0"
+    ]
+  },
+  "source_files": "DeveloperToolManager/**/*.{swift,h,m}",
+  "swift_version": "5.0"
+}

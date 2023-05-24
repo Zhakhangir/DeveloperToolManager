@@ -1,0 +1,41 @@
+{
+  "name": "SbiUIKit",
+  "version": "0.2.3",
+  "summary": "UI tools",
+  "description": "UIKit Extensions for SberBank DIT SBI",
+  "homepage": "https://sbtatlas.sigma.sbrf.ru/stash/scm/sbi_sbol_ios/sbiuikit.git",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": {
+    "Зверев Алексей Юрьевич": "AYZverev@sberbank.ru"
+  },
+  "source": {
+    "git": "https://sbtatlas.sigma.sbrf.ru/stash/scm/sbi_sbol_ios/sbiuikit.git",
+    "tag": "0.2.3"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "SbiUIKit/Core/**/*.{swift,h,m}",
+      "dependencies": {
+        "SnapKit": [
+
+        ]
+      },
+      "subspecs": [
+        {
+          "name": "Extensions",
+          "source_files": "SbiUIKit/Extensions/**/*.{swift,h,m}"
+        }
+      ]
+    },
+    {
+      "name": "ImageProvider",
+      "source_files": "SbiUIKit/ImageProvider/**/*.{swift,h,m}"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+module SbiLogger {
+  umbrella header "SbiLogger-umbrella.h"
+
+  export *
+  module * { export * }
+}

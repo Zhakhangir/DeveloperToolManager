@@ -1,0 +1,48 @@
+PODS:
+  - DeveloperToolManager (0.1.0):
+    - SbiDevelopMenu
+    - SbiLogger
+  - SbiDevelopMenu (1.0.0)
+  - SbiLogger (1.2.0):
+    - SbiUIKit
+  - SbiUIKit (0.2.3):
+    - SbiUIKit/Core (= 0.2.3)
+    - SbiUIKit/ImageProvider (= 0.2.3)
+  - SbiUIKit/Core (0.2.3):
+    - SbiUIKit/Core/Extensions (= 0.2.3)
+    - SnapKit
+  - SbiUIKit/Core/Extensions (0.2.3):
+    - SnapKit
+  - SbiUIKit/ImageProvider (0.2.3)
+  - SnapKit (5.6.0)
+
+DEPENDENCIES:
+  - DeveloperToolManager (from `../`)
+  - SbiDevelopMenu (from `../Libs/SbiDevelopMenu`)
+  - SbiLogger (from `../Libs/SbiLogger`)
+  - SbiUIKit (from `../Libs/SbiUIKit`)
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+
+EXTERNAL SOURCES:
+  DeveloperToolManager:
+    :path: "../"
+  SbiDevelopMenu:
+    :path: "../Libs/SbiDevelopMenu"
+  SbiLogger:
+    :path: "../Libs/SbiLogger"
+  SbiUIKit:
+    :path: "../Libs/SbiUIKit"
+
+SPEC CHECKSUMS:
+  DeveloperToolManager: c3d9509771a17896b02e61a62346109e61f0ee35
+  SbiDevelopMenu: a2cf23efe6d0428f4e01a513d0bade7966b44f10
+  SbiLogger: 7af21ccf4f26d8ca3d0872e1cfd3be14ea9f76c9
+  SbiUIKit: 041f495aa7fe8b67457dfcb9451e720e4d367c06
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+
+PODFILE CHECKSUM: c89d4bda720c637c72d68c5ffb86af06535a908a
+
+COCOAPODS: 1.12.0
