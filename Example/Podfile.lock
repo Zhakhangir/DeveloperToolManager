@@ -1,7 +1,8 @@
 PODS:
-  - DeveloperToolManager (0.1.0):
+  - DeveloperToolManager (0.2.0):
     - SbiDevelopMenu
     - SbiLogger
+    - SnapKit (~> 5.6.0)
   - SbiDevelopMenu (1.0.0)
   - SbiLogger (1.2.0):
     - SbiUIKit
@@ -37,7 +38,7 @@ EXTERNAL SOURCES:
     :path: "../Libs/SbiUIKit"
 
 SPEC CHECKSUMS:
-  DeveloperToolManager: c3d9509771a17896b02e61a62346109e61f0ee35
+  DeveloperToolManager: 1eec9aaeb48c789d64cc0772d8ea6712117558d4
   SbiDevelopMenu: a2cf23efe6d0428f4e01a513d0bade7966b44f10
   SbiLogger: 7af21ccf4f26d8ca3d0872e1cfd3be14ea9f76c9
   SbiUIKit: 041f495aa7fe8b67457dfcb9451e720e4d367c06

@@ -6,14 +6,12 @@
 //
 
 import UIKit
-import SbiDevelopMenu
 
 extension UIViewController {
 
     open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if case .motionShake = motion {
-//            DeveloperToolManager.shared.menuController.modalPresentationStyle = .fullScreen
-//            present(DeveloperToolManager.shared.menuController.embedInNavigation(), animated: true)
+            present(DeveloperToolManager.shared.menuController, animated: true)
         }
     }
 }

@@ -19,19 +19,19 @@ public class ServerSelectionViewController: UIViewController {
         pickerView.dataSource = self
         return pickerView
     }()
-
-    private var saveButton: UIButton = {
+    
+    private lazy var saveButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 12
         button.setTitle("Сохранить", for: .normal)
-        button.backgroundColor = .green
+        button.backgroundColor = UINavigationBar.appearance().tintColor
         return button
     }()
 
     public override func viewDidLoad() {
 
         view.backgroundColor = .white
-        selectedServer.text = UserDefaults.standard.string(forKey: userDefaultsKey)
+        selectedServer.text = "Тeкущий хост: \(UserDefaults.standard.string(forKey: userDefaultsKey))"
         setupUI()
         addActions()
     }
@@ -83,9 +83,24 @@ public class ServerSelectionViewController: UIViewController {
     }
 
     @objc private func saveStend() {
-        let selectedRow = pickerView.selectedRow(inComponent: 1)
-        selectedServer.text = UserDefaults.standard.string(forKey: userDefaultsKey)
-        UserDefaults.standard.set(hostKeys[selectedRow], forKey: userDefaultsKey)
+        let alert = UIAlertController(
+            title: "Осторожно Стенд 😱",
+            message: "Вы точно хотите изменить сденд? После этого приложение перезагружается! 🤡🤡🤡",
+            preferredStyle: .alert)
+        let okAction = UIAlertAction(
+            title: "OK 🤬",
+            style: .default,
+            handler: {
+                let selectedRow = pickerView.selectedRow(inComponent: 1)
+                UserDefaults.standard.set(hostKeys[selectedRow], forKey: userDefaultsKey)
+                exit(0)
+            })
+        let cancelAction = UIAlertAction(title: "Отмена 😅", style: .cancel)
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
     }
 }
 
