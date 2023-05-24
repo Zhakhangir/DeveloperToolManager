@@ -6,7 +6,6 @@
 //
 
 import SbiDevelopMenu
-import SbiLogger
 
 public class DeveloperToolManager {
 
@@ -17,7 +16,7 @@ public class DeveloperToolManager {
     private init() { }
 
     public func createDeveloperTool(items: [IMenuItem]) {
-        menuController = DevMenuAssembly().makeDebugMenuModule(items: items).embededInNavigation
+        menuController = UINavigationController(rootViewController: DevMenuAssembly().makeDebugMenuModule(items: items))
         menuController.modalPresentationStyle = .fullScreen
     }
 }
