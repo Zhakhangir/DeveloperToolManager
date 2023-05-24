@@ -31,12 +31,12 @@ public class ServerSelectionViewController: UIViewController {
     public override func viewDidLoad() {
 
         view.backgroundColor = .white
-        selectedServer.text = "Тeкущий хост: \(UserDefaults.standard.string(forKey: userDefaultsKey))"
+        configureHost()
         setupUI()
         addActions()
     }
 
-    init(hostKeys: [String], userDefaultsKey: String) {
+    public init(hostKeys: [String], userDefaultsKey: String) {
         self.hostKeys = hostKeys
         self.userDefaultsKey = userDefaultsKey
         super.init(nibName: nil, bundle: nil)
@@ -44,6 +44,13 @@ public class ServerSelectionViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func configureHost() {
+        if UserDefaults.standard.object(forKey: userDefaultsKey) == nil {
+            UserDefaults.standard.set(hostKeys.first, forKey: userDefaultsKey)
+        }
+       selectedServer.text = "Тeкущий хост: " + (UserDefaults.standard.string(forKey: userDefaultsKey) ?? "")
     }
     
     private func setupUI() {
@@ -57,7 +64,7 @@ public class ServerSelectionViewController: UIViewController {
         layoutConstraints += [
             selectedServer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             selectedServer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            selectedServer.bottomAnchor.constraint(equalTo: pickerView.topAnchor, constant: 32)
+            selectedServer.bottomAnchor.constraint(equalTo: pickerView.topAnchor, constant: -32)
         ]
 
         pickerView.translatesAutoresizingMaskIntoConstraints = false
@@ -85,17 +92,21 @@ public class ServerSelectionViewController: UIViewController {
     @objc private func saveStend() {
         let alert = UIAlertController(
             title: "Осторожно Стенд 😱",
-            message: "Вы точно хотите изменить сденд? После этого приложение перезагружается! 🤡🤡🤡",
+            message: "Вы точно хотите изменить стенд? После этого приложение перезагружается! 🤡",
             preferredStyle: .alert)
         let okAction = UIAlertAction(
             title: "OK 🤬",
             style: .default,
-            handler: {
-                let selectedRow = pickerView.selectedRow(inComponent: 1)
-                UserDefaults.standard.set(hostKeys[selectedRow], forKey: userDefaultsKey)
-                exit(0)
+            handler: { [unowned self] _ in
+                let selectedRow = self.pickerView.selectedRow(inComponent: 0)
+                UserDefaults.standard.set(self.hostKeys[selectedRow], forKey: self.userDefaultsKey)
+                
+                UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    exit(0)
+                }
             })
-        let cancelAction = UIAlertAction(title: "Отмена 😅", style: .cancel)
+        let cancelAction = UIAlertAction(title: "Отмена 🥹", style: .cancel)
         
         alert.addAction(okAction)
         alert.addAction(cancelAction)

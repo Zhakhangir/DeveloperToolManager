@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   
   s.name             = 'DeveloperToolManager'
-  s.version          = '0.3.0'
+  s.version          = '0.4.0'
   s.summary          = 'UI tools'
   s.description      = 'Developer Tool for Berekebank BBusiness'
 
@@ -15,7 +15,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '12.0'
   s.swift_versions   = '5.0'
 
-  s.dependency 'SbiLogger'
   s.dependency 'SbiDevelopMenu'
 
   s.source_files  = 'DeveloperToolManager/**/*.{swift,h,m}'

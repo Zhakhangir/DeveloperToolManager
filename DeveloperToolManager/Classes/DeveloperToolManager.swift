@@ -12,7 +12,7 @@ public class DeveloperToolManager {
 
     var menuController: UIViewController!
 
-    static let shared = DeveloperToolManager()
+    public static let shared = DeveloperToolManager()
 
     private init() { }
 
