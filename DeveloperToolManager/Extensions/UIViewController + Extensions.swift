@@ -10,8 +10,11 @@ import UIKit
 extension UIViewController {
 
     open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if case .motionShake = motion {
-            present(DeveloperToolManager.shared.menuController, animated: true)
+        let rootVC = UIApplication.shared.keyWindow?.rootViewController
+        if let devMenu = DeveloperToolManager.shared.menuController,
+           devMenu != rootVC?.presentedViewController,
+           motion == .motionShake {
+            rootVC?.present(devMenu, animated: true)
         }
     }
 }

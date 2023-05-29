@@ -16,7 +16,8 @@ public class DeveloperToolManager {
     private init() { }
 
     public func createDeveloperTool(items: [IMenuItem]) {
-        menuController = UINavigationController(rootViewController: DevMenuAssembly().makeDebugMenuModule(items: items))
-        menuController.modalPresentationStyle = .fullScreen
+        let devMenu = DevMenuAssembly().makeDebugMenuModule(items: items)
+        menuController = UINavigationController(rootViewController: devMenu)
+        menuController?.modalPresentationStyle = .fullScreen
     }
 }
